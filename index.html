@@ -1,7 +1,27 @@
 <script>
 
-var url = document.referrer;
+
+
+var ref = '';  
+ if (document.referrer.length > 0) {  
+  ref = document.referrer;  
+ }  
+ try {  
+  if (ref.length == 0 && opener.location.href.length > 0) {  
+   ref = opener.location.href;  
+  }  
+ } catch (e) {} 
+
+
+var url = ref;
+
+
+
+
 var uri=url.split("//")[1].split("/")[0];
+
+
+
 
 document.write("域名"+uri+"正在出售，联系Email:1336621774@qq.com");
 </script>
